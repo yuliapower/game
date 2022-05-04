@@ -10,8 +10,7 @@ public class Node implements Serializable {
     private Node nodeFirst;
     private Node nodeSecond;
     private User user;
-    protected Node nodeSave;
-//    protected FileSaver fileSaver;
+    static Node nodeSave;
 
 
     public Node(String title, String description, Node nodeFirst, Node nodeSecond) {
@@ -20,7 +19,6 @@ public class Node implements Serializable {
         this.nodeFirst = nodeFirst;
         this.nodeSecond = nodeSecond;
     }
-
 
 
     public User getUser() {
@@ -49,23 +47,11 @@ public class Node implements Serializable {
     }
 
 
-
-    public Node getNodeSave() {
-        return nodeSave;
-    }
-
-    public void setNodeSave(Node nodeSave) {
-        this.nodeSave = nodeSave;
-    }
-
     public void game(Node node) {
-        // Node nextNode = nodeSave;
         Node nextNode = null;
         System.out.println("Выберите 1 или 2 для ответа, или 3 для выхода в главное меню");
         Scanner scanner = new Scanner(System.in);
         String string = scanner.nextLine();
-
-
         if (string.equalsIgnoreCase("1")) {
             nextNode = node.getNodeFirst();
             System.out.println(nextNode.getTitle());
@@ -88,9 +74,7 @@ public class Node implements Serializable {
         }
         if (string.equalsIgnoreCase("3")) {
             System.out.println(nodeSave);
-            // fileSaver=new FileSaver();
-            //   nodeSave.setFileSaver(fileSaver);
-            FileSaver.saveNode(nodeSave);
+           // FileSaver.saveNode(nodeSave);
             node.getUser().exit();
         }
         if (nextNode != null) {
@@ -106,7 +90,6 @@ public class Node implements Serializable {
                 ", nodeFirst=" + nodeFirst +
                 ", nodeSecond=" + nodeSecond +
                 ", user=" + user +
-                ", nodeSave=" + nodeSave +
                 '}';
     }
 }

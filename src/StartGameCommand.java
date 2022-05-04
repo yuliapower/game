@@ -1,4 +1,6 @@
-public class StartGameCommand implements Command {
+import java.io.Serializable;
+
+public class StartGameCommand implements Command, Serializable {
    private Menu menu;
   // protected Node node;
 

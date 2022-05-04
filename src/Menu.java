@@ -1,16 +1,17 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Menu {
+public class Menu implements Serializable {
     //Receiver
-    private FileSaver fileSaver;
+
     private Node node;
 
     public Menu() {
         //  this.node=node;
     }
 
-    public Menu(FileSaver fileSaver, Node node) {
-        this.fileSaver = fileSaver;
+    public Menu(Node node) {
+
         this.node = node;
     }
 
@@ -58,7 +59,7 @@ public class Menu {
         System.out.println("Загрузка игры");
     }
 
-    void exit(FileSaver saver) {
+    void exit() {
         // System.out.println("Выход из игры");
         System.out.println("Меню: ");
         System.out.println("1. Начать игру");
@@ -68,14 +69,14 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         String command = scanner.nextLine();
         if (command.equalsIgnoreCase("3")) {
-//            save(fileSaver);
+            save();
+
         }
         // getString(node);
     }
 
-    void save(FileSaver saver) {
-        //FileSaver fileSaver=new FileSaver();
-//        saver.saveNode(getNode());
+    void save() {
+        FileSaver.saveNode(Node.nodeSave);
         System.out.println("Выход из игры");
     }
 

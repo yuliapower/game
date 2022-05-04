@@ -1,4 +1,6 @@
-public class MenuReturnCommand implements Command {
+import java.io.Serializable;
+
+public class MenuReturnCommand implements Command, Serializable {
     private Menu menu;
 private Node node;
 

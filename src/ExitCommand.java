@@ -1,7 +1,7 @@
-public class ExitCommand implements Command{
-    private Menu menu;
-    private FileSaver fileSaver;
+import java.io.Serializable;
 
+public class ExitCommand implements Command, Serializable {
+    private Menu menu;
 
     public ExitCommand(Menu menu) {
         this.menu = menu;
@@ -9,6 +9,6 @@ public class ExitCommand implements Command{
 
     @Override
     public void execute() {
-        menu.exit(fileSaver);
+        menu.exit();
     }
 }

@@ -1,6 +1,8 @@
-public class SaveGameCommand implements Command {
+import java.io.Serializable;
+
+public class SaveGameCommand implements Command, Serializable {
     private Menu menu;
-    private FileSaver fileSaver;
+
 
     public SaveGameCommand(Menu menu) {
         this.menu = menu;
@@ -9,6 +11,6 @@ public class SaveGameCommand implements Command {
 
     @Override
     public void execute() {
-        menu.save(fileSaver);
+        menu.save();
     }
 }
