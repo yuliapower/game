@@ -12,10 +12,13 @@ public class FileSaver {
             FileOutputStream fileWriter = new FileOutputStream("nodes.txt");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileWriter);
             objectOutputStream.writeObject(node);
+            objectOutputStream.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        }
+
         }
     }
 
 
-}
+

@@ -61,7 +61,7 @@ public class Node implements Serializable {
     public void game(Node node) {
         // Node nextNode = nodeSave;
         Node nextNode = null;
-        System.out.println("??????? 1 ??? 2 ??? ??????, ??? 3 ??? ????, ????? ????????? ? ??????? ????");
+        System.out.println("Выберите 1 или 2 для ответа, или 3 для выхода в главное меню");
         Scanner scanner = new Scanner(System.in);
         String string = scanner.nextLine();
 
@@ -71,7 +71,7 @@ public class Node implements Serializable {
             System.out.println(nextNode.getTitle());
             System.out.println(nextNode.getDescription());
             if (nextNode.getNodeFirst() == null) {
-                System.out.println("???? ?????????");
+                System.out.println("Игра закончена");
                 node.getUser().menuReturn();
             }
             nodeSave = nextNode;
@@ -81,7 +81,7 @@ public class Node implements Serializable {
             System.out.println(nextNode.getTitle());
             System.out.println(nextNode.getDescription());
             if (nextNode.getNodeSecond() == null) {
-                System.out.println("???? ?????????");
+                System.out.println("Игра закончена");
                 node.getUser().menuReturn();
             }
             nodeSave = nextNode;

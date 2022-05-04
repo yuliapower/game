@@ -12,4 +12,9 @@ public class Three {
         this.left = left;
         this.right = right;
     }
+
+    public Three(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
 }
