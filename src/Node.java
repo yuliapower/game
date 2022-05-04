@@ -9,7 +9,6 @@ public class Node implements Serializable {
     private String description;
     private Node nodeFirst;
     private Node nodeSecond;
-    private User user;
     static Node nodeSave;
 
 
@@ -19,16 +18,6 @@ public class Node implements Serializable {
         this.nodeFirst = nodeFirst;
         this.nodeSecond = nodeSecond;
     }
-
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
 
     public String getTitle() {
         return title;
@@ -58,7 +47,8 @@ public class Node implements Serializable {
             System.out.println(nextNode.getDescription());
             if (nextNode.getNodeFirst() == null) {
                 System.out.println("Игра закончена");
-                node.getUser().menuReturn();
+                //node.getUser().menuReturn();
+                User.menuReturn();
             }
             nodeSave = nextNode;
         }
@@ -68,14 +58,16 @@ public class Node implements Serializable {
             System.out.println(nextNode.getDescription());
             if (nextNode.getNodeSecond() == null) {
                 System.out.println("Игра закончена");
-                node.getUser().menuReturn();
+               // node.getUser().menuReturn();
+                User.menuReturn();
             }
             nodeSave = nextNode;
         }
         if (string.equalsIgnoreCase("3")) {
             System.out.println(nodeSave);
            // FileSaver.saveNode(nodeSave);
-            node.getUser().exit();
+            User.exit();
+            //node.getUser().exit();
         }
         if (nextNode != null) {
             game(nextNode);
@@ -89,7 +81,6 @@ public class Node implements Serializable {
                 ", description='" + description + '\'' +
                 ", nodeFirst=" + nodeFirst +
                 ", nodeSecond=" + nodeSecond +
-                ", user=" + user +
                 '}';
     }
 }

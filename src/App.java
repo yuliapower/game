@@ -48,33 +48,17 @@ public class App {
                 "\" Бельчонок не пропустил еще ни одной встречи, вдруг он попал в беду." +
                 "\" - подумал Лисёнок. Как поступить Лисенку?\n", node2, node3);
 
-           LinkedList<Node> nodes = new LinkedList<>();
-            nodes.add(node1);
-            nodes.add(node2);
-            nodes.add(node3);
-            nodes.add(node4);
-            nodes.add(node5);
-            nodes.add(node6);
-            nodes.add(node7);
-            nodes.add(node8);
-            nodes.add(node9);
-            nodes.add(node10);
-            nodes.add(node11);
-            nodes.add(node12);
-            nodes.add(node13);
-
-
         Menu menu = new Menu();
         Command saveGame = new SaveGameCommand(menu);
-        Command startGame = new StartGameCommand(menu);
+        Command startGame = new StartGameCommand(menu, node1);
         Command downloadGame = new DownloadGameCommand(menu);
-        Command exit = new ExitCommand(menu);
+        Command exit = new ExitCommand(menu, node1);
         Command menuReturn = new MenuReturnCommand(menu, node1);
 
 
         User user = new User(startGame, downloadGame, saveGame, exit, menuReturn);
-
-
+        User.menuReturn();
+/*
         node1.setUser(user);
         node2.setUser(user);
         node3.setUser(user);
@@ -88,29 +72,10 @@ public class App {
         node11.setUser(user);
         node12.setUser(user);
         node13.setUser(user);
-
-
-        // Scanner scanner = new Scanner(System.in);
-        //  String command;
-        user.menuReturn();
-
-        //  command = scanner.nextLine();
-   /*     switch (command) {
-            case "1":
-                //while ()
-                user.start();
-                node1.game(node1,user);
-               return;
-            case "2":
-                user.download();
-                return;
-            case "3":
-                user.exit();
-                break;
-            default:
-                System.out.println("Неизвестная команда");
-        }
         */
+
+        //  user.menuReturn();
+
 
     }
 }

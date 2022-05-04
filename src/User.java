@@ -5,8 +5,8 @@ public class User implements Serializable {
     private Command start;
     private Command download;
     private Command save;
-    private Command exit;
-    private Command menuReturn;
+    private static Command exit;
+    private static Command menuReturn;
     private static final long serialVersionUID = 1L;
 
     public User(Command start, Command download, Command save, Command exit, Command menuReturn) {
@@ -37,11 +37,11 @@ public class User implements Serializable {
         download.execute();
     }
 
-    public void exit() {
+    public static void exit() {
         exit.execute();
     }
 
-    public void menuReturn() {
+    public static void menuReturn() {
         menuReturn.execute();
     }
 
