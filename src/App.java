@@ -1,9 +1,8 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-
-
 
 
         //создание узлов (вопросов)
@@ -48,6 +47,22 @@ public class App {
                 " Лисёнок ждал, ждал, но так и не смог дождаться своего друга. " +
                 "\" Бельчонок не пропустил еще ни одной встречи, вдруг он попал в беду." +
                 "\" - подумал Лисёнок. Как поступить Лисенку?\n", node2, node3);
+
+           LinkedList<Node> nodes = new LinkedList<>();
+            nodes.add(node1);
+            nodes.add(node2);
+            nodes.add(node3);
+            nodes.add(node4);
+            nodes.add(node5);
+            nodes.add(node6);
+            nodes.add(node7);
+            nodes.add(node8);
+            nodes.add(node9);
+            nodes.add(node10);
+            nodes.add(node11);
+            nodes.add(node12);
+            nodes.add(node13);
+
 
         Menu menu = new Menu();
         Command saveGame = new SaveGameCommand(menu);

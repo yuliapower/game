@@ -1,26 +1,15 @@
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Menu implements Serializable {
     //Receiver
 
-    private Node node;
+   // private Node node;
+   private static final long serialVersionUID = 1L;
 
     public Menu() {
-        //  this.node=node;
-    }
 
-    public Menu(Node node) {
-
-        this.node = node;
-    }
-
-    public Node getNode() {
-        return node;
-    }
-
-    public void setNode(Node node) {
-        this.node = node;
     }
 
     public void getString(Node node) {
@@ -56,8 +45,20 @@ public class Menu implements Serializable {
     }
 
     void download() {
-        System.out.println("Загрузка игры");
-    }
+getString(FileDownload.downloadNode());
+        //System.out.println("Загрузка игры");
+     //  Node node1=FileDownload.downloadNode();
+     //   for (Node node : linkedList) {
+       //     if (node == node1){
+      //          getString(node,linkedList);
+            }
+
+        //пройтись циклом в линклисте и если нода равна ноде из файл доунлауд - то вставим ее в метод гетстриг
+        // FileDownload.downloadNode().getTitle();
+//linkedList.stream().filter(node -> node.getTitle().equalsIgnoreCase( FileDownload.downloadNode().getTitle());
+
+        //linkedList.forEach(node->node.getTitle().equalsIgnoreCase( FileDownload.downloadNode().getTitle()));
+
 
     void exit() {
         // System.out.println("Выход из игры");
@@ -70,9 +71,10 @@ public class Menu implements Serializable {
         String command = scanner.nextLine();
         if (command.equalsIgnoreCase("3")) {
             save();
-
         }
-        // getString(node);
+        if (command.equalsIgnoreCase("2")) {
+            download();
+        }
     }
 
     void save() {
@@ -80,7 +82,7 @@ public class Menu implements Serializable {
         System.out.println("Выход из игры");
     }
 
-    void menuReturn(Node node) {
+    void menuReturn(Node node ) {
         System.out.println("Меню: ");
         System.out.println("1. Начать игру");
         System.out.println("2. Загрузить игру");

@@ -7,6 +7,7 @@ public class User implements Serializable {
     private Command save;
     private Command exit;
     private Command menuReturn;
+    private static final long serialVersionUID = 1L;
 
     public User(Command start, Command download, Command save, Command exit, Command menuReturn) {
         this.start = start;

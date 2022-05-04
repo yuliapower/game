@@ -5,7 +5,7 @@ public class FileSaver {
 
     public static void saveNode(Node node) {
         try {
-            FileOutputStream fileWriter = new FileOutputStream("nodes.txt");
+            FileOutputStream fileWriter = new FileOutputStream("nodes.txt",false);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileWriter);
             objectOutputStream.writeObject(node);
             objectOutputStream.close();
