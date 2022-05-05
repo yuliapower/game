@@ -1,8 +1,8 @@
 import java.io.Serializable;
 
 public class StartGameCommand implements Command, Serializable {
-   private Menu menu;
     private static final long serialVersionUID = 1L;
+    private Menu menu;
     private Node node;
 
     public StartGameCommand(Menu menu, Node node) {

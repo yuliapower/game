@@ -2,12 +2,12 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     //Invoker
+    private static final long serialVersionUID = 1L;
     private Command start;
     private Command download;
     private Command save;
     private static Command exit;
     private static Command menuReturn;
-    private static final long serialVersionUID = 1L;
 
     public User(Command start, Command download, Command save, Command exit, Command menuReturn) {
         this.start = start;
