@@ -55,7 +55,7 @@ public class App {
 
 
         User user = new User(startGame, downloadGame, saveGame, exit, menuReturn);
-        User.menuReturn();
+        User.menuReturn(); //вызов меню
 /*
         node1.setUser(user);
         node2.setUser(user);

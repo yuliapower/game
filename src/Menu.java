@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Menu implements Serializable {
     //Receiver
-
     private static final long serialVersionUID = 1L;
 
     public Menu() {
