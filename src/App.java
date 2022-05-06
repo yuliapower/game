@@ -13,24 +13,6 @@ public class App {
 
         User user = new User(startGame, downloadGame, saveGame, exit, menuReturn);
         User.menuReturn(); //вызов меню
-/*
-        node1.setUser(user);
-        node2.setUser(user);
-        node3.setUser(user);
-        node4.setUser(user);
-        node5.setUser(user);
-        node6.setUser(user);
-        node7.setUser(user);
-        node8.setUser(user);
-        node9.setUser(user);
-        node10.setUser(user);
-        node11.setUser(user);
-        node12.setUser(user);
-        node13.setUser(user);
-        */
-
-        //  user.menuReturn();
-
 
     }
 }
