@@ -15,7 +15,7 @@ public class Menu implements Serializable {
     }
 
     void download() {
-        Node node = FileDownload.downloadNode();
+        Node node = FileHandler.downloadNode();
         start(node);
         node.game(node);
     }
@@ -24,18 +24,15 @@ public class Menu implements Serializable {
         Scanner scanner = new Scanner(System.in);
         String command = scanner.nextLine();
         switch (command) {
-            case "1":
+            case "1" -> {
                 start(node);
                 node.game(node);
-                return;
-            case "2":
+            }
+            case "2" -> {
                 download();
-                return;
-            case "3":
-                System.out.println("Выход из игры");
-                break;
-            default:
-                System.out.println("Неизвестная команда");
+            }
+            case "3" -> System.out.println("Выход из игры");
+            default -> System.out.println("Неизвестная команда");
         }
     }
 
@@ -48,26 +45,23 @@ public class Menu implements Serializable {
         Scanner scanner = new Scanner(System.in);
         String command = scanner.nextLine();
         switch (command) {
-            case "1":
+            case "1" -> {
                 start(node);
                 node.game(node);
-                return;
-            case "2":
+            }
+            case "2" -> {
                 download();
-                return;
-            case "3":
-                System.out.println("Выход из игры");
-                break;
-            case "4":
+            }
+            case "3" -> System.out.println("Выход из игры");
+            case "4" -> {
                 save();
-                return;
-            default:
-                System.out.println("Неизвестная команда");
+            }
+            default -> System.out.println("Неизвестная команда");
         }
     }
 
     void save() {
-        FileSaver.saveNode(Node.nodeSave);
+        FileHandler.saveNode(Node.nodeSave);
         System.out.println("Выход из игры");
     }
 
